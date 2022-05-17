@@ -3,7 +3,7 @@ services:
   todotests:
     image: todotests
     # build: ./todo-app/tests
-    container_name: todotests
+    # container_name: todotests
     depends_on:
       - todofront
       - todoback
@@ -13,7 +13,7 @@ services:
   todofront:
     image: todofrontend
     # build: ./todo-app/front-end
-    container_name: todofrontend
+    # container_name: todofrontend
     ports:
       - "3000:3000"
     depends_on:
@@ -24,6 +24,6 @@ services:
   todoback:
     image: todobackend
     # build: ./todo-app/back-end
-    container_name: todobackend
+    # container_name: todobackend
     ports:
       - "3001:3001"
