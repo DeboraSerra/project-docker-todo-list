@@ -7,9 +7,7 @@ services:
     depends_on:
       - todofront
       - todoback
-    environment:
-      - FRONT_HOST=todofront
-      - FRONT_PORT=3000
+    network_mode: host
   todofront:
     image: todofrontend
     # build: ./todo-app/front-end
@@ -18,13 +16,9 @@ services:
       - "3000:3000"
     depends_on:
       - todoback
-    environment:
-      - REACT_APP_API_HOST=todoback
-      - REACT_APP_API_PORT=3001
   todoback:
     image: todobackend
     # build: ./todo-app/back-end
     # container_name: todobackend
     ports:
       - "3001:3001"
-
